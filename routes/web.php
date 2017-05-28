@@ -13,4 +13,15 @@
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/games', function (){
+   return view('games_list');
+})->name('games');
+Route::get('/games/{n}', function (){
+    //TODO
 });
