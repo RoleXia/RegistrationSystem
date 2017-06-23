@@ -20,8 +20,15 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/games', function (){
-   return view('games_list');
+    $games = App\Game::all();
+   return view('games_list', ['games' => $games]);
 })->name('games');
 Route::get('/games/{n}', function (){
     //TODO
 });
+Route::get('/calendar', function (){
+    //TODO
+})->name('calendar');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

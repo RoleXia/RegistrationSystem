@@ -27,7 +27,11 @@ class CreateGamesTable extends Migration
 
             $table->tinyInteger('complexity');
 
+            $table->string('img_name', 100);
 
+            $table->mediumText('description');
+
+            $table->timestamps();
 
         });
     }
@@ -40,5 +44,6 @@ class CreateGamesTable extends Migration
     public function down()
     {
         Schema::drop('games');
+        Schema::drop('tags');
     }
 }
